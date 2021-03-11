@@ -1,0 +1,24 @@
+Create iperf server service:
+
+1. Copy /home/pi/PyScripts/IperfServer/iperf3.service to /etc/systemd/system/ directory
+
+
+	sudo cp /home/pi/PyScripts/IperfServer/iperf3.service /etc/systemd/system/
+
+2. Change service file access permission
+
+	sudo chmod 664 /etc/systemd/system/iperf3.service
+
+3. Reload systemd daemon
+
+	sudo systemctl daemon-reload
+
+4. Test service using below commands
+
+	sudo systemctl start iperf3
+	sudo systemctl stop iperf3
+	sudo systemctl restart iperf3
+	systemctl status iperf3
+
+5. If all is working fine then enable the service
+	sudo systemctl enable iperf3
