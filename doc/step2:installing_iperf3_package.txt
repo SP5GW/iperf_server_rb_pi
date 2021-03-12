@@ -1,0 +1,13 @@
+Installing iperf3 package:
+
+1.Install iperf3 package on RB:
+	sudo apt update
+	sudo apt install iperf3
+
+2.Check location of the installed package
+	which iperf3
+
+3. Test iperf3 installation by starting manually the server
+	iperf3 -s
+	ctrl-x to stop it
+	

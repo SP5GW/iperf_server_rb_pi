@@ -1,4 +1,4 @@
-Create iperf server service:
+Creating iperf server service:
 
 1. Copy /home/pi/PyScripts/IperfServer/iperf3.service to /etc/systemd/system/ directory
 

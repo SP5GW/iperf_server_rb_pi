@@ -1,0 +1,44 @@
+Configuring headless Raspberry Pi:
+
+1. Download rasbian os from:
+www.raspberrypi.org
+
+2. Flash SD card using software such as balendaEtcher (PC)
+
+3. Configure WiFi interface by creating:
+
+/etc/wpa_supplicant/wpa_supplicant.conf
+
+according to example in ../config/wpa_supplicant.conf
+
+in main directory of sd card.
+
+4. Create empty ssh file with no extention also in main dir of sd card. 
+
+5. After inserting prepared sd card reboot pi, which shall no connect to wifi.
+
+6. Check in your home gateway what is the ip address assigned by 
+dhcp server to rb
+
+7. Using ip address from 6) ssh to pi
+	ssh pi@pi_ip_address
+	default password: raspberry
+
+8. Change pi password
+	passwd
+
+9. Change etc/hostname with more descriptive hostname and reboot pi
+	see hostname example in ../config/hostname
+
+10. Assign static ip by modifying /etc/dhcpcd.conf file according to 
+example below:
+	../conf/dhcpcd.conf
+
+11. Enable vnc server
+	sudo raspi-config
+Then select Interface options -> P3 VNC
+In case of problems with displaying remote desktop try to modify also
+Display Options -> D1 Resolution -> DMT Mode 85 1280x720 60Hz 16:9
+
+On computer you access headless pi from install vnc viewer such 
+as www.realvnc.com
